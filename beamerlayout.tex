@@ -1,0 +1,111 @@
+
+
+%% Beamer Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useoutertheme[subsection=false,shadow]{miniframes}
+\useinnertheme{default}
+\usefonttheme{serif}
+\usepackage{palatino}
+
+\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape}
+
+
+\setbeamercolor*{lower separation line head}{bg=saarblue} 
+\setbeamercolor*{normal text}{fg=black,bg=white} 
+\setbeamercolor*{alerted text}{fg=red} 
+\setbeamercolor*{example text}{fg=black} 
+\setbeamercolor*{structure}{fg=black} 
+ 
+\setbeamercolor*{palette tertiary}{fg=black,bg=black!10} 
+\setbeamercolor*{palette quaternary}{fg=black,bg=black!10}
+
+ \setbeamertemplate{footline}[frame number] 
+
+\renewcommand{\(}{\begin{columns}}
+\renewcommand{\)}{\end{columns}}
+\newcommand{\<}[1]{\begin{column}{#1}}
+\renewcommand{\>}{\end{column}}
+
+\newcommand{\vect}[1]{\ensuremath{\left( \begin{array}{c}#1\end{array}\right)}}
+
+\iftoggle{section-slides}{
+\AtBeginSection[]{
+\begin{frame}[noframenumbering]
+%\addtocounter{framenumber}{-1}
+\begin{center}
+\begin{beamercolorbox}[sep=8pt,center]{part
+title}
+\usebeamerfont{part title}\insertsection
+\end{beamercolorbox}
+\end{center}
+\end{frame}
+}
+}{}
+
+% \makeatletter
+% \patchcmd{\slideentry}{\advance\beamer@xpos by1\relax}{}{}{}
+% \def\beamer@subsectionentry#1#2#3#4#5{\advance\beamer@xpos by1\relax}%
+% \makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\refs[1]{%
+  \begin{textblock*}{8cm}(0.3cm,9.0cm)%
+    \scriptsize {\color{gray}#1}
+  \end{textblock*}
+}
+
+\newcommand\refsat[2]{%
+  \begin{textblock*}{5cm}(0.3cm,9.3cm)%
+    \scriptsize \onslide<#2>{#1}
+  \end{textblock*}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\beamertemplatenavigationsymbolsempty
+
+\iftoggle{logo}{
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay] \node[anchor=north
+east,yshift=-7.9cm] at (current page.north east)
+{\includegraphics[height=1.2cm]{uds-logo-final-englisch.eps}};
+\end{tikzpicture}}
+}
+{}
+
+\newcommand{\showtitlepage}{\begin{frame}
+\thispagestyle{empty}
+\title{\scshape {\Title}}
+\subtitle{\scshape{\SubTitle}}
+\author{
+    \vspace{0.5cm} \\
+	\Author\\
+    \vspace{0cm}
+    \scriptsize {\CoAuthor}
+}
+\iftoggle{logo}{
+\date{ \center
+  \begin{tikzpicture}[remember picture,overlay] \node[anchor=north
+    east,yshift=-7.9cm] at (current page.north east)
+    {\includegraphics[height=1.2cm]{logo.eps}};
+  \end{tikzpicture}
+	\\
+	\vspace{1cm}
+	%\today
+}
+}{}
+\institute{\Institute}
+\titlepage
+\end{frame}
+
+}
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}

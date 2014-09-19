@@ -1,0 +1,54 @@
+\include{beamerhead}
+
+\togglefalse{logo} % show logo.eps on the lower right of every slide
+\togglefalse{section-slides} % show title slides for every section
+
+\renewcommand{\Title}{Example Template}
+\renewcommand{\SubTitle}{for \LaTeX~ Beamer}
+\renewcommand{\Author}{Yannick Forster}
+\renewcommand{\CoAuthor}{}
+\renewcommand{\Institute}{{\scshape Saarland University}}
+\date{}
+
+
+\include{beamerlayout}
+
+\begin{document}
+
+\showtitlepage % use this to show title frame
+
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+\section{Section 1}
+
+\subsection{Dummy 1} % use dummy subsections if you want the headline to show an overview over the slides
+
+\begin{frame}{Slide 1}
+
+  Content!
+
+  \refs{[Nobody]} % use this to show references on a slide
+\end{frame}
+
+\section{Section 2}
+
+\subsection{Dummy 2}
+
+\begin{frame}{Slide 2}
+  Content!
+\end{frame}
+
+\appendix % appendix sections will not occur in the headline
+
+\backupbegin % backup-slides will not be counted for the numbering
+
+\begin{frame}{Backupslide}
+  Backup!
+\end{frame}
+
+\backupend
+
+
+\end{document}
