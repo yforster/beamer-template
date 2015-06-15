@@ -19,7 +19,10 @@
 \setbeamercolor*{palette tertiary}{fg=black,bg=black!10} 
 \setbeamercolor*{palette quaternary}{fg=black,bg=black!10}
 
- \setbeamertemplate{footline}[frame number] 
+\iftoggle{totalcounter}
+{\setbeamertemplate{footline}[frame number]}
+{\setbeamertemplate{footline}{\raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[10pt]{\scriptsize{\color{gray}\insertframenumber}}}}}}
+
 
 \renewcommand{\(}{\begin{columns}}
 \renewcommand{\)}{\end{columns}}
@@ -69,7 +72,7 @@ title}
 \addtobeamertemplate{frametitle}{}{%
 \begin{tikzpicture}[remember picture,overlay] \node[anchor=north
 east,yshift=-7.9cm] at (current page.north east)
-{\includegraphics[height=1.2cm]{uds-logo-final-englisch.eps}};
+{\includegraphics[height=1.2cm]{logo.eps}};
 \end{tikzpicture}}
 }
 {}
