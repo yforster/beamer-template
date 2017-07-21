@@ -1,5 +1,3 @@
-
-
 %% Beamer Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \useoutertheme[subsection=false,shadow]{miniframes}
 \useinnertheme{default}
@@ -10,13 +8,13 @@
 \setbeamerfont{frametitle}{shape=\scshape}
 
 
-\setbeamercolor*{lower separation line head}{bg=saarblue} 
-\setbeamercolor*{normal text}{fg=black,bg=white} 
-\setbeamercolor*{alerted text}{fg=red} 
-\setbeamercolor*{example text}{fg=black} 
-\setbeamercolor*{structure}{fg=black} 
- 
-\setbeamercolor*{palette tertiary}{fg=black,bg=black!10} 
+\setbeamercolor*{lower separation line head}{bg=saarblue}
+\setbeamercolor*{normal text}{fg=black,bg=white}
+\setbeamercolor*{alerted text}{fg=red}
+\setbeamercolor*{example text}{fg=black}
+\setbeamercolor*{structure}{fg=black}
+
+\setbeamercolor*{palette tertiary}{fg=black,bg=black!10}
 \setbeamercolor*{palette quaternary}{fg=black,bg=black!10}
 
 \iftoggle{totalcounter}
@@ -71,7 +69,7 @@ title}
 \iftoggle{logo}{
 \addtobeamertemplate{frametitle}{}{%
 \begin{tikzpicture}[remember picture,overlay] \node[anchor=north
-east,yshift=-7.9cm] at (current page.north east)
+east,yshift=-15.5cm,xshift=-1cm] at (current page.north east)
 {\includegraphics[height=1.2cm]{logo.eps}};
 \end{tikzpicture}}
 }
@@ -89,10 +87,7 @@ east,yshift=-7.9cm] at (current page.north east)
 }
 \iftoggle{logo}{
 \date{ \center
-  \begin{tikzpicture}[remember picture,overlay] \node[anchor=north
-    east,yshift=-7.9cm] at (current page.north east)
-    {\includegraphics[height=1.2cm]{logo.eps}};
-  \end{tikzpicture}
+    {\includegraphics[height=1.2cm]{logo.eps}}
 	\\
 	\vspace{1cm}
 	%\today
@@ -110,5 +105,10 @@ east,yshift=-7.9cm] at (current page.north east)
 }
 \newcommand{\backupend}{
    \addtocounter{framenumberappendix}{-\value{framenumber}}
-   \addtocounter{framenumber}{\value{framenumberappendix}} 
+   \addtocounter{framenumber}{\value{framenumberappendix}}
 }
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "slides-LOLA-2017"
+%%% End:
